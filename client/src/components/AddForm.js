@@ -43,39 +43,42 @@ class AddForm extends React.Component {
     }
 
     render() {
-        let loadingMessage;
-        if (this.props.isLoading){
-            loadingMessage = <p>Loading</p>;
-        } else {
-            loadingMessage = <></>;
-        }
-        return(<section>
-            <h2>Add Smurf</h2>
-            <form onSubmit={this.handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="name">Name:</label><br/>
-                    <input value={this.state.name} onChange={this.handleChange} name="name" id="name" />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="name">Position:</label><br/>
-                    <input value={this.state.position} onChange={this.handleChange} name="position" id="name" />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="name">Nickname:</label><br/>
-                    <input value={this.state.nickname} onChange={this.handleChange} name="nickname" id="name" />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="name">Description:</label><br/>
-                    <input value={this.state.description} onChange={this.handleChange} name="description" id="name" />
-                </div>
-                {
-                    this.props.smurfFormErrorMessage ? <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {this.props.smurfFormErrorMessage}</div> : null
-                }
-                <button>Submit Smurf</button>
-            </form>
-            {loadingMessage}
-            <SmurfDisplay />
-        </section>);
+        // let loadingMessage;
+        // if (this.props.isLoading){
+        //     loadingMessage = <p>Loading</p>;
+        // } else {
+        //     loadingMessage = <></>;
+        // }
+        return(
+        <div className="OuterSectionDiv">
+            <section>
+                <h2>Add Smurf</h2>
+                <form onSubmit={this.handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="name">Name:</label><br/>
+                        <input value={this.state.name} onChange={this.handleChange} name="name" id="name" />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="name">Position:</label><br/>
+                        <input value={this.state.position} onChange={this.handleChange} name="position" id="name" />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="name">Nickname:</label><br/>
+                        <input value={this.state.nickname} onChange={this.handleChange} name="nickname" id="name" />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="name">Description:</label><br/>
+                        <input value={this.state.description} onChange={this.handleChange} name="description" id="name" />
+                    </div>
+                    {
+                        this.props.smurfFormErrorMessage ? <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {this.props.smurfFormErrorMessage}</div> : null
+                    }
+                    <button>Submit Smurf</button>
+                </form>
+                {this.props.isLoading ? <p>Loading</p> : null}
+            </section>
+            {/* <SmurfDisplay /> */}
+        </div>);
     }
 }
 
