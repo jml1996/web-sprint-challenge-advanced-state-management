@@ -18,7 +18,8 @@ export class SmurfDisplay extends React.Component {
     render() {
         const { smurfs } = this.props;
 
-        console.log(smurfs);
+        console.log(this.props);
+        console.log(this.state);
         // console.log(this.props.smurfs[0]);
         // let smurfsArray = [];
         // if (smurfs[0]){
@@ -41,9 +42,9 @@ export class SmurfDisplay extends React.Component {
         //     }
         return(<div>
                 {
-                    smurfs.map((smurf, index) => {
+                this.props.isLoading ? (<div>Loading</div>) : (smurfs.map((smurf, index) => {
                         return <Smurf key={index} smurf={smurf} />
-                    })
+                    }))
                 }
             </div>
         );

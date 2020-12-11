@@ -31,7 +31,8 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 smurfs: [...state.smurfs, action.payload],
                 isLoading: false,
-                error: ""
+                error: "",
+                smurfFormErrorMessage: ""
             });
         case(API_SMURFS_FAIL):
             return({
