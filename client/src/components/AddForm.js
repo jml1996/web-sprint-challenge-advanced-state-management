@@ -32,7 +32,14 @@ class AddForm extends React.Component {
             this.props.setErrorText("Name, nickname, and position are required.");
         } else {
             this.props.addSmurf(nam, pos, nick, des);
+            this.props.fetchSmurfs();
         }
+        this.setState({
+            name: "",
+            position: "",
+            nickname: "",
+            description: ""
+        })
     }
 
     render() {

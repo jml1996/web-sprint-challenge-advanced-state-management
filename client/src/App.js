@@ -5,7 +5,6 @@ import SmurfDisplay from './components/SmurfDisplay';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
-import { fetchSmurfs } from "./actions";
 
 class App extends Component {
 

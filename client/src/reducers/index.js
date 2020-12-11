@@ -22,13 +22,14 @@ const reducer = (state = initialState, action) => {
         case(API_GET_SMURFS_SUCCESS):
             return({
                 ...state,
-                smurfs: [...state.smurfs, action.payload],
+                smurfs: action.payload,
                 isLoading: false,
                 error: ""
             });
         case(API_POST_SMURFS_SUCCESS):
             return({
                 ...state,
+                smurfs: [...state.smurfs, action.payload],
                 isLoading: false,
                 error: ""
             });

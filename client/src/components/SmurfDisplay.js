@@ -5,22 +5,27 @@ import { connect } from 'react-redux';
 import {  fetchSmurfs, addSmurf, setErrorText } from './../actions';
 
 export class SmurfDisplay extends React.Component {
-    state = {
-        smurfsFetched: []
-    }
+    // state = {
+    //     smurfsFetched: []
+    // }
 
     componentDidMount() {
-        this.setState({smurfsFetched: this.props.fetchSmurfs()});
-        console.log(this.props.fetchSmurfs());
+        this.props.fetchSmurfs();
+        // this.setState({smurfsFetched: this.props.fetchSmurfs()});
+        // console.log(this.props.fetchSmurfs());
     }
 
     render() {
         const { smurfs } = this.props;
-        console.log(this.props.smurfs[0]);
-        let smurfsArray = [];
-        if (smurfs[0]){
-            smurfsArray = smurfs[0];
-        }
+
+        console.log(smurfs);
+        // console.log(this.props.smurfs[0]);
+        // let smurfsArray = [];
+        // if (smurfs[0]){
+        //     smurfsArray = smurfs[0];
+        // }
+        // console.log(smurfsArray);
+
         // let loadingMessage;
         //     if (this.props.isLoading){
         //         return(<div><p>Loading</p></div>);
@@ -36,8 +41,8 @@ export class SmurfDisplay extends React.Component {
         //     }
         return(<div>
                 {
-                    smurfsArray.map((smurf, index) => {
-                        return <Smurf key={Math.random()} smurf={smurf} />
+                    smurfs.map((smurf, index) => {
+                        return <Smurf key={index} smurf={smurf} />
                     })
                 }
             </div>
