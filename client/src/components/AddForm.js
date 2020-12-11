@@ -23,6 +23,7 @@ class AddForm extends React.Component {
     }
 
     handleSubmit = (e) => {
+        e.preventDefault();
         const nam = this.state.name;
         const pos = this.state.position;
         const nick = this.state.nickname;
