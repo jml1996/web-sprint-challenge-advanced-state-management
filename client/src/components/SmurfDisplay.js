@@ -5,9 +5,6 @@ import { connect } from 'react-redux';
 import {  fetchSmurfs, addSmurf, setErrorText } from './../actions';
 
 export class SmurfDisplay extends React.Component {
-    // state = {
-    //     smurfsFetched: []
-    // }
 
     componentDidMount() {
         this.props.fetchSmurfs();
@@ -20,26 +17,6 @@ export class SmurfDisplay extends React.Component {
 
         console.log(this.props);
         console.log(this.state);
-        // console.log(this.props.smurfs[0]);
-        // let smurfsArray = [];
-        // if (smurfs[0]){
-        //     smurfsArray = smurfs[0];
-        // }
-        // console.log(smurfsArray);
-
-        // let loadingMessage;
-        //     if (this.props.isLoading){
-        //         return(<div><p>Loading</p></div>);
-        //     } else {
-        //         return(<div>
-        //             {
-        //                 smurfs.map((smurf, index) => {
-        //                     <Smurf />
-        //                 })
-        //             }
-        //             </div>
-        //         );
-        //     }
         return(<div>
                 {
                 this.props.isLoading ? (<div>Loading</div>) : (smurfs.map((smurf, index) => {
@@ -56,19 +33,6 @@ const mapStateToProps = state => {
         isLoading: state.isLoading,
         smurfs: state.smurfs
     }
-           // return(<div>
-            
-        // </div>)
-// {
-//     smurfs: [],
-//     isLoading: false,
-//     error: ""
-// }
-//     return {
-//       videos: state.youtubeReducer.videos,
-//       isFetching: state.youtubeReducer.isFetching,
-//       error: state.youtubeReducer.error
-//     };
 };
 
 export default connect(mapStateToProps, {fetchSmurfs, addSmurf, setErrorText})(SmurfDisplay);

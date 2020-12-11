@@ -49,13 +49,6 @@ class AddForm extends React.Component {
         } else {
             loadingMessage = <></>;
         }
-
-        // let errorMessage;
-        // if (this.props.error){
-        //     errorMessage = <p>{this.props.error}</p>;
-        // } else {
-        //     errorMessage = <></>;
-        // }
         return(<section>
             <h2>Add Smurf</h2>
             <form onSubmit={this.handleSubmit}>
