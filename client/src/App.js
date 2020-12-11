@@ -28,3 +28,5 @@ export default App;
 
 //Task List:
 //1. Add in SmurfDisplay and AddForm into your application.
+
+// ^These appear to have been here already

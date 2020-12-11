@@ -1,12 +1,14 @@
 import { API_SMURFS_START,
     API_GET_SMURFS_SUCCESS,
     API_POST_SMURFS_SUCCESS,
-    API_SMURFS_FAIL } from '../actions';
+    API_SMURFS_FAIL,
+    FORM_ERROR } from '../actions';
 
 export const initialState = {
     smurfs: [],
     isLoading: false,
-    error: ""
+    error: "",
+    smurfFormErrorMessage: ""
 }
 
 const reducer = (state = initialState, action) => {
@@ -35,6 +37,12 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 isLoading: false,
                 error: action.payload
+            });
+        case(FORM_ERROR):
+            return({
+                ...state,
+                isLoading: false,
+                smurfFormErrorMessage: action.payload
             });
         default:
             return state;
